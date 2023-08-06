@@ -1,0 +1,26 @@
+#Code to guess a number
+
+
+
+import random
+guess = input("Enter a range of number to be guessed: ")
+if guess.isdigit():
+    guess = int(guess)
+else:
+    print("Please type a number next time")
+    quit()
+
+a = random.randint(0,guess)
+while True:
+    x = input("Make a guess: ")
+    if x.isdigit():
+        x = int(x)
+    else:
+        print("Please type a number next time")
+        continue
+    
+    if x==a:
+        print("You Won")
+        quit()
+    else:
+        print("You got it wrong")

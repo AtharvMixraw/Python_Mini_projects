@@ -1,0 +1,48 @@
+#ROCK, PAPER AND SCISSORS GAME IN PYTHON
+
+import random
+user_wins = 0
+computer_wins = 0
+draw = 0
+
+
+options = ["rock", "paper", "scissor"]
+
+while True:
+    user_pick = input("Type Rock/Paper/Scissor or q to quit game: ").lower()
+    if user_pick == "q":
+        break
+    if user_pick not in options:
+        continue
+
+    computer_guess = options[random.randint(0,2)]
+    print("You picked ", user_pick)
+    print("Computer picked ", computer_guess)
+
+    if user_pick == "rock" and computer_guess == "scissor":
+        print("You Won !!")
+        user_wins+=1
+    elif user_pick == "rock" and computer_guess == "rock":
+        print("Match Draw")
+    elif user_pick == "paper" and computer_guess == "rock":
+        print("You Won !!")
+        user_wins+=1
+    elif user_pick == "paper" and computer_guess == "paper":
+        print("Match Draw")
+
+    elif user_pick == "scissor" and computer_guess == "paper":
+        print("You Won !!")
+        user_wins+=1
+    elif user_pick == "scissor" and computer_guess == "scissor":
+        print("Match Draw")
+
+    else:
+        print("You Lost!!")
+        computer_wins+=1
+    
+
+print("User wins: ",user_wins)
+print("Computer Wins: ", computer_wins)
+print("Number of draws: ", draw)
+
+print("Goodbye!!")
